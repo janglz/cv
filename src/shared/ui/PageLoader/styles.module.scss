@@ -4,39 +4,81 @@
   > div {
     width: 100vw;
     height: 12.5vh;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
 
     &:nth-child(1) {
       background-color: rgba($color-gray, .5);
+      animation-delay: .2s;
     }
   
   
     &:nth-child(2) {
       background-color: rgba($color-gray, .55);
+      animation-delay: .4s;
     }
   
   
     &:nth-child(3) {
       background-color: rgba($color-gray, .6);
+      animation-delay: .3s;
     }
 
     &:nth-child(4) {
       background-color: rgba($color-gray, .65);
+      animation-delay: .5s;
     }
 
     &:nth-child(5) {
       background-color: rgba($color-gray, .7);
+      animation-delay: .8s;
     }
 
     &:nth-child(6) {
       background-color: rgba($color-gray, .75);
+      animation-delay: .4s;
     }
 
     &:nth-child(7) {
       background-color: rgba($color-gray, .8);
+      animation-delay: .2s;
     }
 
     &:nth-child(8) {
       background-color: rgba($color-gray, .85);
+      animation-delay: .3s;
     }
+
+  }
+}
+
+.start > div {
+  &:nth-child(even) {
+    animation-name: left;
+  }
+
+  &:nth-child(odd) {
+    animation-name: right;
+  }
+}
+
+@keyframes left {
+  from {
+    transform: translate(0);
+  }
+
+  to {
+    transform: translateX(-100vw);
+  }
+}
+
+@keyframes right {
+  from {
+    transform: translate(0);
+  }
+
+  to {
+    transform: translateX(100vw);
   }
 }
