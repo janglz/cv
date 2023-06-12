@@ -3,6 +3,9 @@
 .wrapper {
   position: absolute;
   top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   pointer-events: none;
 
   > div {
@@ -79,7 +82,7 @@
       animation-delay: .4s;
     }
 
-    &:nth-child(7)> {
+    &:nth-child(7) {
       animation-delay: .2s;
     }
 
@@ -90,11 +93,13 @@
 }
 
 .start > div {
-  &:nth-child(even) {
+  &:nth-child(even),
+  &:nth-child(even) > div {
     animation-name: left;
   }
 
-  &:nth-child(odd) {
+  &:nth-child(odd),
+  &:nth-child(odd)> div {
     animation-name: right;
   }
 }
