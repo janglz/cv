@@ -6,20 +6,18 @@ interface Props {
 }
 
 export const PageLoader = function PageLoader({ isPageReady = true }: Props) {
+	const divs = new Array(8).fill('');
 	return (
 		<div
 			className={cn(styles.wrapper, {
 				[styles.start]: isPageReady,
 			})}
 		>
-			<div />
-			<div />
-			<div />
-			<div />
-			<div />
-			<div />
-			<div />
-			<div />
+			{divs.map(() => (
+				<div>
+					<div />
+				</div>
+			))}
 		</div>
 	);
 };

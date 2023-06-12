@@ -7,7 +7,12 @@ export const Header = () => {
 		<nav className={styles.wrapper}>
 			<List>
 				{links.map((link) => (
-					<Link to={link.href} label={link.label} className={styles.link} />
+					<Link
+						key={link.href}
+						to={link.href}
+						label={link.label}
+						className={styles.link}
+					/>
 				))}
 			</List>
 		</nav>

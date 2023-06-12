@@ -1,55 +1,91 @@
 @import 'shared/styles/variables.scss';
 
 .wrapper {
+  position: absolute;
+  top: 0;
+  pointer-events: none;
+
   > div {
     width: 100vw;
     height: 12.5vh;
+    position: relative;
     animation-timing-function: ease-in-out;
     animation-duration: 1s;
     animation-fill-mode: forwards;
+    background-color: var(--bg);
+    
+    > div {
+      width: 100vw;
+      z-index: 1;
+      height: 12.5vh;
+    }
+
+    &:nth-child(1)>div {
+      background-color: rgba($color-loader, .5);
+    }
+
+
+    &:nth-child(2)>div {
+      background-color: rgba($color-loader, .55);
+    }
+
+
+    &:nth-child(3)>div {
+      background-color: rgba($color-loader, .6);
+    }
+
+    &:nth-child(4)>div {
+      background-color: rgba($color-loader, .65);
+    }
+
+    &:nth-child(5)>div {
+      background-color: rgba($color-loader, .7);
+    }
+
+    &:nth-child(6)>div {
+      background-color: rgba($color-loader, .75);
+    }
+
+    &:nth-child(7)>div {
+      background-color: rgba($color-loader, .8);
+    }
+
+    &:nth-child(8)>div {
+      background-color: rgba($color-loader, .85);
+    }
 
     &:nth-child(1) {
-      background-color: rgba($color-loader, .5);
       animation-delay: .2s;
     }
-  
-  
+
+
     &:nth-child(2) {
-      background-color: rgba($color-loader, .55);
       animation-delay: .4s;
     }
-  
-  
+
     &:nth-child(3) {
-      background-color: rgba($color-loader, .6);
       animation-delay: .3s;
     }
 
     &:nth-child(4) {
-      background-color: rgba($color-loader, .65);
       animation-delay: .5s;
     }
 
     &:nth-child(5) {
-      background-color: rgba($color-loader, .7);
       animation-delay: .8s;
     }
 
     &:nth-child(6) {
-      background-color: rgba($color-loader, .75);
       animation-delay: .4s;
     }
 
-    &:nth-child(7) {
-      background-color: rgba($color-loader, .8);
+    &:nth-child(7)> {
       animation-delay: .2s;
     }
 
     &:nth-child(8) {
-      background-color: rgba($color-loader, .85);
       animation-delay: .3s;
     }
-
   }
 }
 

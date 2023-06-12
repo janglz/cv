@@ -1,0 +1,17 @@
+// .wrapper {
+//   position: absolute;
+//   top: 0;
+// }
+
+.header {
+  position: absolute;
+  width: 100vw;
+  height: 5rem;
+  top: 0;
+}
+
+.main {
+  height: calc(100vh - 5rem);
+  margin-top: 5rem;
+  overflow: auto;
+}
