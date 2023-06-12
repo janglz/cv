@@ -1,3 +1,5 @@
+import { PageLoader } from 'shared/ui';
+
 export default function App() {
-	return <div>template</div>;
+	return <PageLoader />;
 }
