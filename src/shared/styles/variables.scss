@@ -1,1 +1,8 @@
-$color-gray: #818181;
+:root {
+  --color-loader: #000000;
+  --color-link-hovered: #e0e0e0;
+  --color-header: #eeeeee;
+}
+
+// $color-loader: #818181;
+$color-loader: var(--color-loader);

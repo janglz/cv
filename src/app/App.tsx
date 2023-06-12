@@ -1,6 +1,12 @@
-import { PageLoader } from 'shared/ui';
+import { Main } from 'pages/Main';
+import { Header } from 'widgets/Header';
 import 'shared/styles/normalize.scss';
 
 export default function App() {
-	return <PageLoader />;
+	return (
+		<div>
+			<Header />
+			<Main />
+		</div>
+	);
 }
