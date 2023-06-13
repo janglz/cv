@@ -3,8 +3,14 @@
   text-decoration: none;
   font-size: 1.5rem;
   color: var(--color-link);
+  border-bottom: 4px transparent;
+  transition: border .4s linear;
 
   &:hover {
     background-color: var(--color-link-hovered);
+  }
+
+  &Active {
+    border-bottom: 4px solid var(--font-color);
   }
 }

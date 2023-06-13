@@ -8,8 +8,21 @@ interface Props {
 	className?: string;
 }
 
-export const Link = ({ to, label, className }: Props) => (
-	<a className={cn(styles.href, className)} href={to}>
-		{label}
-	</a>
-);
+export const Link = ({ to, label, className }: Props) => {
+	const isActiveLink = true;
+
+	return (
+		<a
+			className={cn(
+				styles.href,
+				{
+					[styles.hrefActive]: isActiveLink,
+				},
+				className
+			)}
+			href={to}
+		>
+			{label}
+		</a>
+	);
+};

@@ -13,8 +13,8 @@ export const PageLoader = function PageLoader({ isPageReady = true }: Props) {
 				[styles.start]: isPageReady,
 			})}
 		>
-			{divs.map(() => (
-				<div>
+			{divs.map((_, i) => (
+				<div key={`key-loader-${i}`}>
 					<div />
 				</div>
 			))}

@@ -3,12 +3,11 @@
   width: 100vw;
   height: 5rem;
   top: 0;
+  background-color: var(--color-header);
 }
 
 .main {
-  height: calc(100vh - 5rem);
+  height: calc(100% - 5rem);
   margin-top: 5rem;
-  overflow: scroll;
   width: 100vw;
-  padding: 3rem;
 }
