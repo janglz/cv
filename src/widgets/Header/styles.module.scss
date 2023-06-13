@@ -5,3 +5,10 @@
 .link {
   padding: 1.5rem 2rem;
 }
+
+
+@media (min-width: 1200px) {
+  .wrapper {
+    padding: 0 20%;
+  }
+}

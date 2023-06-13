@@ -1,17 +1,17 @@
-import { List, PageLoader } from 'shared/ui';
+import { List } from 'shared/ui';
 import { cvText } from './mock';
 import styles from './styles.module.scss';
 import { useParallax } from 'shared/hooks';
 import { useRef } from 'react';
 
-export const Main = () => {
+export const MainPage = () => {
 	const ref = useRef<HTMLDivElement>(null);
 	const { position } = useParallax({ anchor: ref });
 
 	return (
-		<main className={styles.main} ref={ref}>
-			<PageLoader isPageReady />
+		<div ref={ref} className={styles.main}>
 			<section className={styles.cv}>{cvText}</section>
+
 			<div className={styles.contactsWrapper}>
 				<div
 					className={styles.parallax}
@@ -25,7 +25,7 @@ export const Main = () => {
 					className={styles.parallax3}
 					style={{ transform: `skewX(${120 - position / 2}deg)` }}
 				/>
-				<section ref={ref}>
+				<section>
 					<h2>contacts</h2>
 					<List isVertical>
 						<span key="1">telegram: @bananroman</span>
@@ -33,6 +33,6 @@ export const Main = () => {
 					</List>
 				</section>
 			</div>
-		</main>
+		</div>
 	);
 };

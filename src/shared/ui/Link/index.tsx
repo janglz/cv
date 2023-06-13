@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 import cn from 'classnames';
 import styles from './styles.module.scss';
+import { NavLink as RouterLink } from 'react-router-dom';
 
 interface Props {
 	to: string;
@@ -9,20 +10,20 @@ interface Props {
 }
 
 export const Link = ({ to, label, className }: Props) => {
-	const isActiveLink = true;
-
 	return (
-		<a
-			className={cn(
-				styles.href,
-				{
-					[styles.hrefActive]: isActiveLink,
-				},
-				className
-			)}
-			href={to}
+		<RouterLink
+			className={({ isActive }) =>
+				cn(
+					styles.href,
+					{
+						[styles.hrefActive]: isActive,
+					},
+					className
+				)
+			}
+			to={to}
 		>
 			{label}
-		</a>
+		</RouterLink>
 	);
 };

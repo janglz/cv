@@ -1,4 +1,4 @@
-import { Main } from 'pages/Main';
+import { Main } from 'widgets/Main';
 import { Header } from 'widgets/Header';
 import 'shared/styles/normalize.scss';
 import { Layout } from 'shared/ui';

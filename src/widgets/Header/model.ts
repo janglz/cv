@@ -1,6 +1,6 @@
 export const links = [
 	{
-		href: '/cv',
+		href: '/',
 		label: 'cv',
 	},
 	{
