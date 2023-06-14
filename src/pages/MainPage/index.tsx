@@ -4,22 +4,34 @@ import styles from './styles.module.scss';
 import { useParallax } from 'shared/hooks';
 import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export const MainPage = () => {
 	const scrollHandlerRef = useRef<HTMLDivElement>(null);
-	const contactsRef = useRef<HTMLElement>(null);
+	const contactsRef = useRef<HTMLDivElement>(null);
 	const { position } = useParallax({ anchor: scrollHandlerRef });
 
-	const { pathname } = useLocation();
+	const location = useLocation();
+	const navigate = useNavigate();
 
 	useEffect(() => {
-		if (pathname === '/contacts' && contactsRef.current) {
-			// contactsRef.current?.scrollIntoView();
-			contactsRef.current?.scrollIntoView();
+		if (position > 149) {
+			navigate('/contacts');
 			return;
 		}
+		if (position < 76) {
+			navigate('/');
+		}
+	}, [position]);
+
+	console.log(position);
+
+	useEffect(() => {
+		if (location.pathname === '/contacts') {
+			return contactsRef.current?.scrollIntoView();
+		}
 		scrollHandlerRef.current?.scrollTo(0, 0);
-	}, [pathname]);
+	}, [location]);
 
 	return (
 		<div ref={scrollHandlerRef} className={styles.main}>
@@ -40,8 +52,8 @@ export const MainPage = () => {
 				/>
 				<section
 					id="contacts-section"
-					ref={contactsRef}
 					className={styles.contacts}
+					ref={contactsRef}
 				>
 					<h2>contacts</h2>
 					<List isVertical>

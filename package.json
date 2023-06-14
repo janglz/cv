@@ -1,7 +1,7 @@
 {
   "name": "cv-front",
   "version": "1.0.0",
-  "description": "",
+  "description": "cv",
   "main": "index.tsx",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack serve --config configs/webpack/webpack.config.ts --mode development --progress",

@@ -1,49 +1,38 @@
-import { useEffect, useState } from 'react';
+import { RefObject, useEffect, useState } from 'react';
 
-interface entryDef {
+interface Entry {
 	isIntersecting: boolean;
 	intersectionRatio: number;
 }
-type scrollObserver = () => IntersectionObserver;
-type isIntersecting = boolean;
-type setisIntersecting = React.Dispatch<React.SetStateAction<boolean>>;
-
-interface IObserver {
-	createScrollObserver: scrollObserver;
-	isIntersecting: isIntersecting;
-	setisIntersecting: setisIntersecting;
-}
 
 export const useIntersectionObserver = (
-	anchor: React.RefObject<HTMLDivElement>
-): IObserver => {
-	const [isIntersecting, setisIntersecting] = useState(false);
+	anchor: RefObject<HTMLDivElement>,
+	margin?: Number
+) => {
+	const [isIntersecting, setIsIntersecting] = useState(false);
 
 	const observer = new IntersectionObserver(executeJob, {
 		threshold: 0.1,
-		root: anchor.current ?? document.body,
-		rootMargin: '1800px 1800px 1800px 1800px',
+		root: document.body,
+		rootMargin: `${margin || 0}px`,
 	});
 
 	useEffect(() => {
-		observer.disconnect();
+		if (anchor.current) {
+			observer.observe(anchor.current);
+		}
+		return () => observer.disconnect();
 	}, [isIntersecting]);
 
-	function executeJob(entries: Array<entryDef>) {
-		entries.forEach((entry) => {
-			if (entry.isIntersecting) {
-				setisIntersecting(true);
-			}
-		});
-	}
-
-	function createScrollObserver() {
-		return observer;
+	function executeJob(entries: Array<Entry>) {
+		if (entries.some((entry) => entry.isIntersecting)) {
+			setIsIntersecting(true);
+			return;
+		}
+		setIsIntersecting(false);
 	}
 
 	return {
-		createScrollObserver,
 		isIntersecting,
-		setisIntersecting,
 	};
 };

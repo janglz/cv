@@ -1,12 +1,11 @@
 import { PageLoader } from 'shared/ui';
-import { Route, Routes, ScrollRestoration } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { MainPage } from 'pages';
 import { Blog } from 'pages/Blog';
 
 export const Main = () => {
 	return (
 		<main>
-			<ScrollRestoration />
 			<PageLoader isPageReady />
 
 			<Routes>
