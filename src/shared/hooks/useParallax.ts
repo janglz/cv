@@ -19,10 +19,21 @@ export const useParallax = function useParallax({ anchor }: Params) {
 	}, 150);
 
 	useEffect(() => {
+		// const observer = new IntersectionObserver(
+		// 	([entry]) => {
+		// 		entry.target.addEventListener('scroll', scrollHandler);
+		// 		console.log('observed', entry);
+		// 	},
+		// 	{ rootMargin: '800px' }
+		// );
+
 		if (anchor?.current) {
+			// observer.observe(anchor.current);
 			anchor.current.addEventListener('scroll', scrollHandler);
 
-			return () => anchor.current?.removeEventListener('scroll', scrollHandler);
+			return () => {
+				anchor.current?.removeEventListener('scroll', scrollHandler);
+			};
 		}
 	}, []);
 

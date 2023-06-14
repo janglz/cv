@@ -17,6 +17,7 @@
     animation-duration: 1s;
     animation-fill-mode: forwards;
     background-color: var(--bg);
+    z-index: 99;
     
     > div {
       width: 100vw;

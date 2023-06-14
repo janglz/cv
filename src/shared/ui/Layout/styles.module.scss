@@ -1,13 +1,16 @@
+@import 'shared/styles/variables.scss';
+
 .header {
-  position: absolute;
+  position: sticky;
   width: 100vw;
-  height: 5rem;
+  height: $header-height;
+  z-index: 5;
   top: 0;
   background-color: var(--color-header);
 }
 
 .main {
-  height: calc(100% - 5rem);
-  margin-top: 5rem;
+  height: calc(100% - $header-height);
+  // margin-top: $header-height;
   width: 100vw;
 }

@@ -2,14 +2,27 @@ import { List } from 'shared/ui';
 import { cvText } from './mock';
 import styles from './styles.module.scss';
 import { useParallax } from 'shared/hooks';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 
 export const MainPage = () => {
-	const ref = useRef<HTMLDivElement>(null);
-	const { position } = useParallax({ anchor: ref });
+	const scrollHandlerRef = useRef<HTMLDivElement>(null);
+	const contactsRef = useRef<HTMLElement>(null);
+	const { position } = useParallax({ anchor: scrollHandlerRef });
+
+	const { pathname } = useLocation();
+
+	useEffect(() => {
+		if (pathname === '/contacts' && contactsRef.current) {
+			// contactsRef.current?.scrollIntoView();
+			contactsRef.current?.scrollIntoView();
+			return;
+		}
+		scrollHandlerRef.current?.scrollTo(0, 0);
+	}, [pathname]);
 
 	return (
-		<div ref={ref} className={styles.main}>
+		<div ref={scrollHandlerRef} className={styles.main}>
 			<section className={styles.cv}>{cvText}</section>
 
 			<div className={styles.contactsWrapper}>
@@ -25,7 +38,11 @@ export const MainPage = () => {
 					className={styles.parallax3}
 					style={{ transform: `skewX(${120 - position / 2}deg)` }}
 				/>
-				<section>
+				<section
+					id="contacts-section"
+					ref={contactsRef}
+					className={styles.contacts}
+				>
 					<h2>contacts</h2>
 					<List isVertical>
 						<span key="1">telegram: @bananroman</span>

@@ -4,10 +4,11 @@
   font-size: 1.5rem;
   color: var(--color-link);
   border-bottom: 4px transparent;
-  transition: border .4s linear;
+  transition: border-color .2s linear, background-color .2s linear;
 
   &:hover {
     background-color: var(--color-link-hovered);
+    border-bottom: 4px solid var(--color-loader);
   }
 
   &Active {
