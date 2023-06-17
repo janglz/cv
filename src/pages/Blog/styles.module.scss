@@ -1,0 +1,8 @@
+@import 'shared/styles/variables.scss';
+
+.wrapper {
+  display: flex;
+  height: calc(100vh - $header-height);
+  align-items: center;
+  justify-content: center;
+}

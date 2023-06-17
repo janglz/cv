@@ -7,3 +7,14 @@
 .vertical {
   flex-direction: column;
 }
+
+.decorated {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+  background-color: var(--color-marker);
+  border-radius: 50%;
+  width: .5rem;
+  height: .5rem;
+  margin-right: .5rem;
+}

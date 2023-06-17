@@ -3,7 +3,7 @@
 .header {
   position: sticky;
   width: 100vw;
-  height: $header-height;
+  min-height: $header-height;
   z-index: 5;
   top: 0;
   background-color: var(--color-header);
@@ -11,6 +11,5 @@
 
 .main {
   height: calc(100% - $header-height);
-  // margin-top: $header-height;
   width: 100vw;
 }

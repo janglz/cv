@@ -1,13 +1,48 @@
+@import 'shared/styles/variables.scss';
+
 .wrapper {
   margin: 0 auto;
+  height: $header-height;
+}
+
+.nav {
+  opacity: 0;
+  background-color: var(--color-header);
+}
+
+.list {
+  // flex-direction: var(--navbar-direction);
+  flex-direction: column;
 }
 
 .link {
   padding: 1.5rem 2rem;
+  width: 100%;
 }
 
+.isOpen {
+  opacity: 1;
+}
 
-@media (min-width: 1200px) {
+@media (min-width: 500px) {
+  .link {
+    width: auto;
+  }
+  
+  .list {
+    flex-direction: row;
+  }
+
+  .nav {
+    opacity: 1;
+  }
+
+  .toggleButton {
+    display: none;
+  }
+}
+
+@media (min-width: 1300px) {
   .wrapper {
     padding: 0 20%;
   }

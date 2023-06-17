@@ -10,12 +10,13 @@ export const useParallax = function useParallax({ anchor }: Params) {
 
 	const scrollHandler = debounce((event: Event) => {
 		const currentTarget = event.target as HTMLElement;
-		const containerHeight = currentTarget?.clientHeight;
+
+		const offsetHeight = currentTarget.offsetHeight;
+		const scrollTop = currentTarget.scrollTop;
 		const scrollHeight = currentTarget.scrollHeight;
 
-		const scrollTop = currentTarget.scrollTop;
-		setPosition(((scrollTop + containerHeight) / scrollHeight) * 150);
-	}, 150);
+		setPosition((scrollTop / (scrollHeight - offsetHeight)) * 100);
+	}, 100);
 
 	useEffect(() => {
 		if (anchor?.current) {

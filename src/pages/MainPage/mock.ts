@@ -71,3 +71,50 @@ export const cvText = `
 			пройденные тесты электронные сертификаты портфолио рекомендации регион
 			переезда зарплату Для вас есть несколько подходящих вакансий к резюме
 `;
+
+export const tools = [
+	'typescript',
+	'React',
+	'next JS',
+	'mobx',
+	'redux',
+	'material UI',
+	'd3',
+	'deck.gl',
+	'SASS',
+	'LESS',
+	'storybook',
+	'Webpack',
+	'CI/CD',
+	'git',
+];
+
+export const hardSkills = [
+	'evaluation',
+	'adaptive layout',
+	'responsive',
+	'ui-lib development',
+	'code review',
+	'refactoring',
+	'formulate problems',
+	'documentation writing',
+];
+
+export const softSkills = [
+	'responcibility',
+	'autonomy',
+	'self-education',
+	'time-management',
+	'communication',
+	'sociability',
+	'easy-going',
+	'creative',
+];
+
+export const interests = [
+	'music',
+	'travelling',
+	'communications',
+	'boardgames',
+	'memes',
+];

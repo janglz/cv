@@ -1,10 +1,10 @@
 import { List } from 'shared/ui';
-import { cvText } from './mock';
 import styles from './styles.module.scss';
 import { useParallax } from 'shared/hooks';
 import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import { CVLayout } from './CVLayout';
 
 export const MainPage = () => {
 	const scrollHandlerRef = useRef<HTMLDivElement>(null);
@@ -15,11 +15,11 @@ export const MainPage = () => {
 	const navigate = useNavigate();
 
 	useEffect(() => {
-		if (position > 149) {
+		if (position > 99) {
 			navigate('/contacts');
 			return;
 		}
-		if (position < 76) {
+		if (position < 1) {
 			navigate('/');
 		}
 	}, [position]);
@@ -35,30 +35,40 @@ export const MainPage = () => {
 
 	return (
 		<div ref={scrollHandlerRef} className={styles.main}>
-			<section className={styles.cv}>{cvText}</section>
+			<CVLayout />
 
 			<div className={styles.contactsWrapper}>
 				<div
 					className={styles.parallax}
-					style={{ left: `${position - 150}%` }}
+					// haha magic numbers
+					// fixme
+					style={{ left: `${position ** 1.2 - 230}%` }}
 				/>
 				<div
 					className={styles.parallax2}
-					style={{ left: `${position * 3 - 350}%` }}
+					style={{ left: `${position ** 1.2 - 210}%` }}
 				/>
 				<div
 					className={styles.parallax3}
-					style={{ transform: `skewX(${120 - position / 2}deg)` }}
+					style={{ transform: `skewX(${position ** 1.1 - 115}deg)` }}
 				/>
 				<section
 					id="contacts-section"
 					className={styles.contacts}
 					ref={contactsRef}
 				>
-					<h2>contacts</h2>
+					<h2>contact me:</h2>
 					<List isVertical>
-						<span key="1">telegram: @bananroman</span>
-						<span key="2">mail: wpidish@gmail.com</span>
+						<a href="https://t.me/bananroman" target="_blanc">
+							write in telegram
+						</a>
+						<a href="mailto:wpidish@gmail.com">send email</a>
+						<a
+							href="https://www.linkedin.com/in/roman-maliuzhinets-277b155b/"
+							target="_blanc"
+						>
+							follow on linkedin
+						</a>
 					</List>
 				</section>
 			</div>

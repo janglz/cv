@@ -21,17 +21,38 @@ body {
 }
 
 :root {
-  --bg: white;
+  --color-bg: white;
   --font-color: black;
   --color-loader: #4d4d4d;
   --color-link-hovered: #e0e0e0;
   --color-header: #eeeeee;
   --color-parallax-1: #3a3a3ab4;
   --color-parallax-2: #e2e2e2;
+  --color-marker: rgb(42, 73, 142);
+  --RGB-color-marker: 42, 73, 142;
+  --navbar-direction: column;
+  --navbar-button-width: 100%;
+
+  --opacity-07: .7;
 }
 
 .darkTheme {
-  --bg: black;
+  --color-bg: black;
   --font-color: white;
+}
+
+a {
+  color: var(--color-marker);
+  display: inline-block;
+  &:hover {
+    color: rgba(var(--RGB-color-marker), var(--opacity-07));
+  }
+}
+
+@media (min-width: 500) {
+  :root {
+    --navbar-direction: row;
+    --navbar-button-auto: 100%;
+  }
 }
 
