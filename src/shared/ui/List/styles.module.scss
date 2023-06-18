@@ -8,6 +8,12 @@
   flex-direction: column;
 }
 
+li {
+  line-height: 1rem;
+  display: inline-flex;
+  align-items: center;
+}
+
 .decorated {
   display: inline-block;
   vertical-align: middle;
@@ -17,4 +23,5 @@
   width: .5rem;
   height: .5rem;
   margin-right: .5rem;
+  line-height: 1.25rem;
 }
