@@ -18,6 +18,15 @@
 
 body {
   overflow: hidden;
+  min-height: 100%;
+  min-height: -moz-available;
+  min-height: -webkit-fill-available;
+  min-height: fill-available;
+}
+
+html {
+  height: fill-available;
+  height: -webkit-fill-available;
 }
 
 button {

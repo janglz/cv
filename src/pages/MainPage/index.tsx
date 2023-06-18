@@ -9,6 +9,7 @@ import { CVLayout } from './CVLayout';
 export const MainPage = () => {
 	const scrollHandlerRef = useRef<HTMLDivElement>(null);
 	const contactsRef = useRef<HTMLDivElement>(null);
+	const oneMoreRef = useRef<HTMLDivElement>(null);
 	const { position } = useParallax({ anchor: scrollHandlerRef });
 
 	const location = useLocation();
@@ -27,12 +28,21 @@ export const MainPage = () => {
 	useEffect(() => {
 		if (location.pathname === '/contacts') {
 			return contactsRef.current?.scrollIntoView();
+			// const yOffset = 0;
+			// const y =
+			// 	(contactsRef?.current?.getBoundingClientRect().top || 0) +
+			// 	window.pageYOffset +
+			// 	yOffset;
+
+			// window.scrollTo({ top: y, behavior: 'smooth' });
 		}
 		scrollHandlerRef.current?.scrollTo(0, 0);
+		// oneMoreRef.current?.scrollIntoView();
 	}, [location]);
 
 	return (
 		<div ref={scrollHandlerRef} className={styles.main}>
+			<div ref={oneMoreRef} />
 			<CVLayout />
 
 			<div className={styles.contactsWrapper}>

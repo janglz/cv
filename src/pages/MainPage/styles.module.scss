@@ -1,9 +1,11 @@
 @import 'shared/styles/variables.scss';
 
-$contacts-wrapper-height: calc(100vh - $header-height);
+$contacts-wrapper-height: 100vh;
 
 .main {
-  height: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
   overflow: auto;
   scroll-behavior: smooth;
   height: $contacts-wrapper-height;
@@ -16,8 +18,9 @@ $contacts-wrapper-height: calc(100vh - $header-height);
 }
 
 .cv {
-  min-height: calc(100vh - $header-height);
+  min-height: 100%;
   padding: 1rem;
+  padding-top: 6rem;
 
   .col1 {
     flex: 0 0 100%;
@@ -53,6 +56,7 @@ $contacts-wrapper-height: calc(100vh - $header-height);
     position: absolute; 
     left: -999rem;
     max-height: 0;
+    height: 0;
   }
 }
 
@@ -101,7 +105,7 @@ $contacts-wrapper-height: calc(100vh - $header-height);
 
 .contactsWrapper {
   position: relative;
-  height: $contacts-wrapper-height;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -167,5 +171,6 @@ $contacts-wrapper-height: calc(100vh - $header-height);
 
   .cv {
     padding: 3rem 0;
+    padding-top: 8rem
   }
 }

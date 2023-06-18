@@ -1,15 +1,20 @@
 @import 'shared/styles/variables.scss';
 
+.wrapper {
+  position: relative;
+  height: 100%;
+}
+
 .header {
   position: sticky;
   width: 100vw;
-  min-height: $header-height;
+  height: $header-height;
   z-index: 5;
   top: 0;
   background-color: var(--color-header);
 }
 
 .main {
-  height: calc(100% - $header-height);
+  height: 100%;
   width: 100vw;
 }
