@@ -78,32 +78,32 @@ export const CVLayout = () => {
 					<article>
 						<h2 className={styles.articleHeader}>tools</h2>
 						<div className={styles.chips}>
-							{tools.map((tool) => (
-								<Chip>{tool}</Chip>
+							{tools.map((tool, i) => (
+								<Chip key={`tools${i}`}>{tool}</Chip>
 							))}
 						</div>
 					</article>
 					<article>
 						<h2 className={styles.articleHeader}>hard skills</h2>
 						<div className={styles.chips}>
-							{hardSkills.map((skill) => (
-								<Chip>{skill}</Chip>
+							{hardSkills.map((skill, i) => (
+								<Chip key={`hards${i}`}>{skill}</Chip>
 							))}
 						</div>
 					</article>
 					<article>
 						<h2 className={styles.articleHeader}>soft skills</h2>
 						<div className={styles.chips}>
-							{softSkills.map((skill) => (
-								<Chip>{skill}</Chip>
+							{softSkills.map((skill, i) => (
+								<Chip key={`softs${i}`}>{skill}</Chip>
 							))}
 						</div>
 					</article>
 					<article>
 						<h2 className={styles.articleHeader}>interests</h2>
 						<div className={styles.chips}>
-							{interests.map((skill) => (
-								<Chip>{skill}</Chip>
+							{interests.map((skill, i) => (
+								<Chip key={`interests${i}`}>{skill}</Chip>
 							))}
 						</div>
 					</article>

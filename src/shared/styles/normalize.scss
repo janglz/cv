@@ -20,6 +20,13 @@ body {
   overflow: hidden;
 }
 
+button {
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  display: inline-flex;
+}
+
 :root {
   --color-bg: white;
   --font-color: black;

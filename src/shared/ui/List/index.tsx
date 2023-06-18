@@ -26,8 +26,8 @@ export const List = ({
 			)}
 		>
 			{Array.isArray(children) ? (
-				React.Children.map(children, (child) => (
-					<li>
+				React.Children.map(children, (child, i) => (
+					<li key={i}>
 						<span className={cn({ [styles.decorated]: isDecorated })} />
 						{child}
 					</li>

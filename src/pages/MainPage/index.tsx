@@ -24,8 +24,6 @@ export const MainPage = () => {
 		}
 	}, [position]);
 
-	console.log(position);
-
 	useEffect(() => {
 		if (location.pathname === '/contacts') {
 			return contactsRef.current?.scrollIntoView();

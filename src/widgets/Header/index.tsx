@@ -19,12 +19,9 @@ export const Header = () => {
 			>
 				<List className={styles.list}>
 					{links.map((link) => (
-						<Link
-							key={link.href}
-							to={link.href}
-							label={link.label}
-							className={styles.link}
-						/>
+						<Button key={link.href} onClick={handleToggleNav}>
+							<Link to={link.href} label={link.label} className={styles.link} />
+						</Button>
 					))}
 				</List>
 			</nav>
