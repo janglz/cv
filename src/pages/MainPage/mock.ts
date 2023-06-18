@@ -85,7 +85,6 @@ export const tools = [
 	'LESS',
 	'storybook',
 	'Webpack',
-	'CI/CD',
 	'git',
 ];
 
@@ -98,6 +97,7 @@ export const hardSkills = [
 	'refactoring',
 	'formulate problems',
 	'documentation writing',
+	'CI/CD',
 ];
 
 export const softSkills = [

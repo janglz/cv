@@ -11,6 +11,11 @@ export const CVLayout = () => {
 			<span className={styles.jobTitle}>
 				<h2>frontend developer</h2>
 			</span>
+			<p>
+				I'm looking for an opportunity to work with smart teammates in an
+				international company. I'm fond of fine, useful, user-friendly
+				interfaces.
+			</p>
 			<div className={styles.delimeter}>
 				<i>
 					<h3>remote / Serbia / Armenia</h3>
@@ -70,6 +75,7 @@ export const CVLayout = () => {
 						<h2 className={styles.articleHeader}>personality</h2>
 						<List isDecorated isVertical>
 							<span>ready to relocate</span>
+							<span>prefer hybrid workflow (remote + office)</span>
 							<span>my phobia is to become stupid</span>
 						</List>
 					</article>
