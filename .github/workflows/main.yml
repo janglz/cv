@@ -13,12 +13,15 @@ on:
  
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "SFTP"
   deploy-via-sftp:
     runs-on: ubuntu-latest
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      
+      - name: Install Dependencies
+        run: yarn
+      - name: Build
+        run: yarn build
           
       - name: SFTP Deploy
         uses: wlixcc/SFTP-Deploy-Action@v1.2.1
@@ -27,17 +30,6 @@ jobs:
           server: 143.244.196.79
           port: 22 # default is 22
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
- 
-          
-          # will put all file under this path
-          local_path: ./* # default is ./*
-          # files will copy to under remote_path
+          local_path: ./dist/* 
           remote_path: /usr/share/nginx/cv
-          
-          # sftp args
           args: '-o ConnectTimeout=5'
-      - name: Install Dependencies
-        run: npm install
-
-      - name: Build for production
-        run: npm run build
