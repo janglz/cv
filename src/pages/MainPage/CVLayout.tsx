@@ -67,16 +67,16 @@ export const CVLayout = () => {
 					<article>
 						<h2 className={styles.articleHeader}>languages</h2>
 						<List isDecorated>
-							<span className={styles.horizontalList}>english</span>
-							<span>russian</span>
+							<span className={styles.horizontalList}>English</span>
+							<span>Russian</span>
 						</List>
 					</article>
 					<article>
 						<h2 className={styles.articleHeader}>personality</h2>
 						<List isDecorated isVertical>
-							<span>ready to relocate</span>
-							<span>prefer hybrid workflow (remote + office)</span>
-							<span>my phobia is to become stupid</span>
+							<span>Ready to relocate</span>
+							<span>Prefer hybrid workflow (remote + office)</span>
+							<span>My phobia is to become stupid</span>
 						</List>
 					</article>
 				</div>

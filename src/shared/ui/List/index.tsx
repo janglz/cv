@@ -28,13 +28,17 @@ export const List = ({
 			{Array.isArray(children) ? (
 				React.Children.map(children, (child, i) => (
 					<li key={i}>
-						<span className={cn({ [styles.decorated]: isDecorated })} />
+						<span className={cn({ [styles.decorated]: isDecorated })}>
+							<span />
+						</span>
 						{child}
 					</li>
 				))
 			) : (
 				<li>
-					<span className={cn({ [styles.decorated]: isDecorated })} />
+					<span className={cn({ [styles.decorated]: isDecorated })}>
+						<span />
+					</span>
 					{children}
 				</li>
 			)}
