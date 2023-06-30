@@ -1,12 +1,13 @@
 import { List } from 'shared/ui';
 import styles from './styles.module.scss';
 import { useParallax } from 'shared/hooks';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { CVLayout } from './CVLayout';
 
 export const MainPage = () => {
+	const [isFirstLoad, setIsFirstLoad] = useState(true);
 	const scrollHandlerRef = useRef<HTMLDivElement>(null);
 	const contactsRef = useRef<HTMLDivElement>(null);
 	const oneMoreRef = useRef<HTMLDivElement>(null);
@@ -16,6 +17,17 @@ export const MainPage = () => {
 	const navigate = useNavigate();
 
 	useEffect(() => {
+		if (location.pathname === '/contacts') {
+			return contactsRef.current?.scrollIntoView();
+		}
+		scrollHandlerRef.current?.scrollTo(0, 0);
+	}, [location]);
+
+	useEffect(() => {
+		if (isFirstLoad) {
+			setIsFirstLoad(false);
+			return;
+		}
 		if (position > 99) {
 			navigate('/contacts');
 			return;
@@ -25,26 +37,10 @@ export const MainPage = () => {
 		}
 	}, [position]);
 
-	useEffect(() => {
-		if (location.pathname === '/contacts') {
-			return contactsRef.current?.scrollIntoView();
-			// const yOffset = 0;
-			// const y =
-			// 	(contactsRef?.current?.getBoundingClientRect().top || 0) +
-			// 	window.pageYOffset +
-			// 	yOffset;
-
-			// window.scrollTo({ top: y, behavior: 'smooth' });
-		}
-		scrollHandlerRef.current?.scrollTo(0, 0);
-		// oneMoreRef.current?.scrollIntoView();
-	}, [location]);
-
 	return (
 		<div ref={scrollHandlerRef} className={styles.main}>
 			<div ref={oneMoreRef} />
 			<CVLayout />
-
 			<div className={styles.contactsWrapper}>
 				<div
 					className={styles.parallax}
