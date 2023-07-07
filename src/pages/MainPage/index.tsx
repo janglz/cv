@@ -41,7 +41,7 @@ export const MainPage = () => {
 		<div ref={scrollHandlerRef} className={styles.main}>
 			<div ref={oneMoreRef} />
 			<CVLayout />
-			<div className={styles.contactsWrapper}>
+			{/* <div className={styles.contactsWrapper}>
 				<div
 					className={styles.parallax}
 					// haha magic numbers
@@ -67,15 +67,12 @@ export const MainPage = () => {
 							write in telegram
 						</a>
 						<a href="mailto:wpidish@gmail.com">send email</a>
-						<a
-							href="https://www.linkedin.com/in/roman-maliuzhinets-277b155b/"
-							target="_blanc"
-						>
+						<a href="https://www.linkedin.com/in/maliuzhinets/" target="_blanc">
 							follow on linkedin
 						</a>
 					</List>
 				</section>
-			</div>
+			</div> */}
 		</div>
 	);
 };

@@ -12,6 +12,7 @@ export const PageLoader = function PageLoader({ isPageReady = true }: Props) {
 			className={cn(styles.wrapper, {
 				[styles.start]: isPageReady,
 			})}
+			style={{ display: 'none' }}
 		>
 			{divs.map((_, i) => (
 				<div key={`key-loader-${i}`}>

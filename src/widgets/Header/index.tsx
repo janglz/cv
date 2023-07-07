@@ -27,9 +27,22 @@ export const Header = () => {
 					className={cn(styles.nav, {
 						[styles.isOpen]: isOpen,
 					})}
+					style={{ width: '100%' }}
 				>
 					<List className={styles.list}>
-						{links.map((link) => (
+						<span style={{ fontSize: '18px' }} className={styles.link}>
+							telegram: bananroman
+						</span>
+						<span style={{ fontSize: '18px' }} className={styles.link}>
+							mail: wpidish@gmail.com
+						</span>
+						<span style={{ fontSize: '18px' }} className={styles.link}>
+							linkedin: maliuzhinets
+						</span>
+						<span style={{ fontSize: '18px' }} className={styles.link}>
+							phone: +79037094016
+						</span>
+						{/* {links.map((link) => (
 							<Button key={link.href} onClick={handleToggleNav}>
 								<Link
 									to={link.href}
@@ -37,7 +50,7 @@ export const Header = () => {
 									className={styles.link}
 								/>
 							</Button>
-						))}
+						))} */}
 					</List>
 				</nav>
 			</div>
