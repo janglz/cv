@@ -1,3 +1,4 @@
+import { createPortal } from 'react-dom';
 import styles from './styles.module.scss';
 import cn from 'classnames';
 
@@ -7,7 +8,7 @@ interface Props {
 
 export const PageLoader = function PageLoader({ isPageReady = true }: Props) {
 	const divs = new Array(8).fill('');
-	return (
+	return createPortal(
 		<div
 			className={cn(styles.wrapper, {
 				[styles.start]: isPageReady,
@@ -18,6 +19,7 @@ export const PageLoader = function PageLoader({ isPageReady = true }: Props) {
 					<div />
 				</div>
 			))}
-		</div>
+		</div>,
+		document.body
 	);
 };
